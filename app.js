@@ -2,7 +2,7 @@ const request = require('request');
 const logger = require(__dirname + '/util/logger');
 const fs = require('fs');
 
-const triesPerSecond = 15;
+const triesPerSecond = 1;
 
 var working = [];
 
@@ -24,7 +24,7 @@ checkCode = function (code) {
         try {
             body = JSON.parse(body);
             if (body.message != "You are being rate limited.") {
-                logger.info(`Çalışan Kod Bulundu: https://discord.gift/${code}`);
+                logger.info(`WORKING CODE: https://discord.gift/${code}`);
                 console.log(JSON.stringify(body, null, 4));
                 working.push(`https://discord.gift/${code}`);
                 fs.writeFileSync(__dirname + '/codes.json', JSON.stringify(working, null, 4));
