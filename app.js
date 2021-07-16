@@ -38,8 +38,7 @@ checkCode = function (code) {
             else {
                 logger.info(`${code} • Status: ${cl.red}Not working${cl.reset}`);
             }
-        }
-        catch (error) {
+        } catch (error) {
             logger.error(cl.red + 'ERROR: ' + error + cl.reset);
             return;
         }
