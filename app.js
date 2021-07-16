@@ -1,8 +1,9 @@
 const request = require('request');
 const logger = require('./logger');
 const fs = require('fs');
+const config = require('./config.json');
 
-const triesPerSecond = 0.8;
+const { WebhookClient } = require('discord.js')
 
 var working = [];
 
@@ -33,9 +34,15 @@ checkCode = function (code) {
                 logger.info(`${cl.green}WORKING CODE: https://discord.gift/${code}${cl.reset}`);
                 console.log(JSON.stringify(body, null, 4));
                 working.push(`https://discord.gift/${code}`);
-                fs.writeFileSync(__dirname + '/codes.json', JSON.stringify(working, null, 4));
-            }
-            else {
+
+                const wh = new WebhookClient();
+                wh.send({
+                    content: `Nitro Sniped! • ${code}`
+                })
+
+                //fs.writeFileSync(__dirname + '/codes.json', JSON.stringify(working, null, 4));
+
+            } else {
                 logger.info(`${code} • Status: ${cl.red}Not working${cl.reset}`);
             }
         } catch (error) {
@@ -49,4 +56,4 @@ checkCode = function (code) {
 checkCode(getGiftCode());
 setInterval(() => {
     checkCode(getGiftCode());
-}, (1 / triesPerSecond) * 100);
+}, (1 / config.checksPerSecond) * 100);
