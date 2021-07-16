@@ -1,8 +1,8 @@
 const request = require('request');
-const logger = require(__dirname + '/util/logger');
+const logger = require('./logger');
 const fs = require('fs');
 
-const triesPerSecond = 0.6;
+const triesPerSecond = 0.8;
 
 var working = [];
 
