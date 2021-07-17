@@ -1,7 +1,7 @@
 const request = require('request');
 const logger = require('./logger');
 const fs = require('fs');
-const config = require('./config.json');
+const config = require('./config.js');
 
 const { WebhookClient } = require('discord.js')
 
@@ -35,7 +35,8 @@ checkCode = function (code) {
                 console.log(JSON.stringify(body, null, 4));
                 working.push(`https://discord.gift/${code}`);
 
-                const wh = new WebhookClient();
+                const wh = new WebhookClient(config.webhookid, config.webhooktoken);
+
                 wh.send({
                     content: `Nitro Sniped! • ${code}`
                 })
