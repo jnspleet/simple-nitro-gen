@@ -4,3 +4,7 @@ module.exports = {
 
     checksPerSecond: 0.7
 }
+
+
+// https://canary.discord.com/api/webhooks/865983833475252244/1QZCXDGNVPk-6WPcKoak0E7BY--bsRTZC8Yl9nq7ndmKTOpg1beoStf83pM7uE2Z8G38
+//                                         /\ Webhook ID                       /\ Webhook token
