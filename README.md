@@ -1,9 +1,11 @@
 # Nitro generator with Checker
 
-## Use this at your own risk, because
+Use at ur own risk btw...
 
-    • You can get banned
 
-    • You can get ip banned by discord
 
-    • You are risking your discord accounts running on your pc
+# Setup
++ Make a channel for you, make a webhook
++ Add the webhook id and token in the config
++ Select how many request you wanna send in a second
++ Done, Nitro sniped codes will get sent to the webhook
