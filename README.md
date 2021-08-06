@@ -1,8 +1,11 @@
 # Nitro generator with Checker
 
 Use at ur own risk btw...
+
 You *can* get banned for this
+
 You *can* get Ratelimited for over *24h* if you request too many
+
 You *can* be IP Banned by discord
 
 
